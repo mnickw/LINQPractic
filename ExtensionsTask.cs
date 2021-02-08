@@ -9,12 +9,19 @@ namespace linq_slideviews
 		/// <summary>
 		/// Медиана списка из нечетного количества элементов — это серединный элемент списка после сортировки.
 		/// Медиана списка из четного количества элементов — это среднее арифметическое 
-        /// двух серединных элементов списка после сортировки.
+		/// двух серединных элементов списка после сортировки.
 		/// </summary>
 		/// <exception cref="InvalidOperationException">Если последовательность не содержит элементов</exception>
 		public static double Median(this IEnumerable<double> items)
 		{
-			throw new NotImplementedException();
+			var listOfItems = items.ToList();
+			listOfItems.Sort();
+			if (listOfItems.Count == 0)
+				throw new InvalidOperationException();
+			else if (listOfItems.Count % 2 == 1)
+				return listOfItems[listOfItems.Count / 2];
+			else
+				return (listOfItems[listOfItems.Count / 2 - 1] + listOfItems[listOfItems.Count / 2]) / 2;
 		}
 
 		/// <returns>
@@ -23,7 +30,21 @@ namespace linq_slideviews
 		/// </returns>
 		public static IEnumerable<Tuple<T, T>> Bigrams<T>(this IEnumerable<T> items)
 		{
-			throw new NotImplementedException();
+			T tempFirst = default(T);
+			bool isTempTupleEmpty = true;
+			foreach (var item in items)
+			{
+				if (isTempTupleEmpty)
+				{
+					tempFirst = item;
+					isTempTupleEmpty = false;
+				}
+				else
+				{
+					yield return new Tuple<T, T>(tempFirst, item);
+					tempFirst = item;
+				}
+			}
 		}
 	}
 }
