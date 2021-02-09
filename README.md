@@ -1,5 +1,4 @@
-﻿﻿
-# ﻿Практики «Median & Bigrams», «Чтение файла» и «Статистика»
+# Практики «Median & Bigrams», «Чтение файла» и «Статистика»
 Репозиторий содержит решения [этой](https://ulearn.me/course/basicprogramming2/Praktika_Median_Bigrams__aa32b282-f8b0-47e2-a16b-510f566f36e5), [этой](https://ulearn.me/course/basicprogramming2/Praktika_Chtenie_fayla__0217848c-5227-415f-a9d2-4c7e41111601) и [этой](https://ulearn.me/course/basicprogramming2/Praktika_Statistika__5181e761-87e7-4914-a963-6fe78c5c7fbc) задачи с ulearn.me.
 Задачи прошли код-ревью у преподавателя (баллы: 50/50, 50/50, 100/100). Все решения курса на максимальный балл также выложены в других репозиториях.
 Ветка unsolved содержит изначальный проект.
